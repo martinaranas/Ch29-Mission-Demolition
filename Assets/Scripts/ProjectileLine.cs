@@ -14,10 +14,10 @@ public class ProjectileLine : MonoBehaviour {
 	private GameObject		_poi;
 	public List<Vector3>	points;
 
-	voidAwake () {
+	void Awake () {
 		S = this; // Set the singleton
 		// Get a reference to the LineRenderer
-		line = GetComponent<LineRenderer();
+		line = GetComponent<LineRenderer>();
 		// Disable the LineRenderer until it's needed
 		line.enabled = false;
 		// Initialize the points List
@@ -56,11 +56,11 @@ public class ProjectileLine : MonoBehaviour {
 		}
 		if (points.Count == 0) {
 			// If this is the launch point...
-			Vector3 launchPos = Slingshot.S.launchPoint.trasform.position;
+			Vector3 launchPos = Slingshot.S.launchPoint.transform.position;
 			Vector3 launchPosDiff = pt - launchPos;
 			// ...it adds an extra bit of line to aid aiming later
 			points.Add ( pt + launchPosDiff);
-			points.Add (pt)
+			points.Add (pt);
 			line.SetVertexCount(2);
 			// Sets the first two points
 			line.SetPosition(0, points[0]);
@@ -103,7 +103,7 @@ public class ProjectileLine : MonoBehaviour {
 
 		// If there is a poi, its loc is added every FixedUpdate
 		AddPoint();
-		if (poi.rigidbody.IsSleeping ()) {
+		if (poi.GetComponent<Rigidbody>().IsSleeping ()) {
 			// Once the poi is sleeping, it is cleared
 			poi = null;
 		}

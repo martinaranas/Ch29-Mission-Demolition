@@ -33,13 +33,13 @@ public class FollowCam : MonoBehaviour {
 			// If poi is a Projectile, check to see if it's at rest
 			if (poi.tag == "Projectile") {
 				// if it is sleeping (that is, not moving)
-				if (poi.rigidbody.IsSleeping()){
+				if (poi.GetComponent<Rigidbody>().IsSleeping()){
 					//return to default view
 					poi = null;
 					// in the next update
 					return;
 		// Limit the X & Y to minimum values
-		destination.x = Mathf.Max( minXY.x, destination.x);
+		destination.x = Mathf.Max (minXY.x, destination.x);
 		destination.y = Mathf.Max (minXY.y, destination.y);
 		// Interpolate from the current Camera position toward destination
 		destination = Vector3.Lerp(transform.position, destination, easing);
@@ -48,7 +48,7 @@ public class FollowCam : MonoBehaviour {
 		// Set the camera to the destination
 		transform.position = destination;
 		// Set the orthographicSize of the Camera to keep Ground in view
-		this.camera.orthographicSize = destination.y + 10;
+		this.GetComponent<Camera>().orthographicSize = destination.y + 10;
 	}
 
 		}
