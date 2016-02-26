@@ -537,6 +537,33 @@ Transform:
   - {fileID: 1724057680}
   m_Father: {fileID: 0}
   m_RootOrder: 4
+--- !u!1 &798987128
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 798987129}
+  m_Layer: 0
+  m_Name: CloudAnchor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &798987129
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 798987128}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
 --- !u!1001 &859684229
 Prefab:
   m_ObjectHideFlags: 0
@@ -1436,6 +1463,7 @@ GameObject:
   - 124: {fileID: 2087004159}
   - 81: {fileID: 2087004158}
   - 114: {fileID: 2087004163}
+  - 114: {fileID: 2087004164}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1526,6 +1554,31 @@ MonoBehaviour:
   _______________________: 0
   poi: {fileID: 0}
   camZ: 0
+--- !u!114 &2087004164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2087004157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 958507350bfd1c54eaaabeb5e1c4a579, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numClouds: 40
+  cloudPrefabs:
+  - {fileID: 126858, guid: 34c0e9e765341a94db5a2770c754c2e9, type: 2}
+  - {fileID: 129558, guid: 0aee42bc10069b54bbbf4c0df36adbeb, type: 2}
+  - {fileID: 146374, guid: d85c77d3960f4c241a9f6fd281f69087, type: 2}
+  - {fileID: 174904, guid: 6496ab556f754914883a47f2859fcc74, type: 2}
+  - {fileID: 175486, guid: 8cf6f8e06637ae94d81e905152642bac, type: 2}
+  cloudPosMin: {x: -50, y: -5, z: 10}
+  cloudPosMax: {x: 100, y: 100, z: 0}
+  cloudScaleMin: 1
+  cloudScaleMax: 5
+  cloudSpeedMult: 0.5
+  ____________________: 0
+  cloudInstances: []
 --- !u!1001 &2092649804
 Prefab:
   m_ObjectHideFlags: 0
